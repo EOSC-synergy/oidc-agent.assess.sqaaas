@@ -1,62 +1,62 @@
 config:
   credentials: []
   project_repos:
+    codebase.helmholtz.cloud/m-team/oidc/oidc-agent:
+      branch: master
+      repo: https://codebase.helmholtz.cloud/m-team/oidc/oidc-agent/
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.9
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    github.com/indigo-dc/oidc-agent:
-      branch: prerel
-      repo: https://github.com/indigo-dc/oidc-agent
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/indigo-dc/oidc-agent git:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent git:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-cardinal-fousek.sh
-        container: qc.acc_frumpy-linen-beagle
+        - /usr/bin/env sh .sqa/script.shaky-salmon-zonkey.sh
+        container: qc.acc_hilly-mauve-collie
   QC.Doc:
     repos:
-      github.com/indigo-dc/oidc-agent find_doc_files.py:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.nerdy-viridian-shrimp.sh
-        container: qc.doc_lovely-pear-gerbil
-      github.com/indigo-dc/oidc-agent git:
+        - /usr/bin/env sh .sqa/script.cranky-wisteria-oriole.sh
+        container: qc.doc_shabby-myrtle-rhinoceros
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent git:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-copper-leopard.sh
-        container: qc.doc_shabby-lavender-maltese
-      github.com/indigo-dc/oidc-agent markdownlint:
+        - /usr/bin/env sh .sqa/script.stuffy-grey-dachshund.sh
+        container: qc.doc_gummy-lime-alligator
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.surly-linen-seahorse.sh
-        container: qc.doc_thirsty-lavender-mau
+        - /usr/bin/env sh .sqa/script.droopy-olivine-tarsier.sh
+        container: qc.doc_stinky-pear-cockroach
   QC.Lic:
     repos:
-      github.com/indigo-dc/oidc-agent licensee:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-smalt-devil.sh
-        container: qc.lic_homey-brass-dachshund
-  QC.Sec:
+        - /usr/bin/env sh .sqa/script.leaky-pink-opossum.sh
+        container: qc.lic_hilly-viridian-bobcat
+  QC.Met:
     repos:
-      github.com/indigo-dc/oidc-agent bandit:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-rose-burmese.sh
-        container: qc.sec_nippy-bronze-shrimp
+        - /usr/bin/env sh .sqa/script.goopy-wheat-llama.sh
+        container: qc.met_hasty-chestnut-drever
   QC.Sty:
     repos:
-      github.com/indigo-dc/oidc-agent flake8:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.woozy-cinnamon-devil.sh
-        container: qc.sty_randy-saffron-pinscher
-      github.com/indigo-dc/oidc-agent jsonlint:
+        - /usr/bin/env sh .sqa/script.shaggy-razzmatazz-cockroach.sh
+        container: qc.sty_shaky-olivine-goat
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent oclint:
         commands:
-        - /usr/bin/env sh .sqa/script.nippy-beige-snake.sh
-        container: qc.sty_cloudy-azure-mammoth
+        - /usr/bin/env sh .sqa/script.sleepy-turquoise-owl.sh
+        container: qc.sty_surly-azure-horse
   QC.Ver:
     repos:
-      github.com/indigo-dc/oidc-agent get_git_tags.py:
+      codebase.helmholtz.cloud/m-team/oidc/oidc-agent get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-amaranth-dolphin.sh
-        container: qc.ver_greasy-brown-koala
+        - /usr/bin/env sh .sqa/script.homey-bistre-skunk.sh
+        container: qc.ver_stuffy-red-warthog
 timeout: 5400
