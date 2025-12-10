@@ -2,11 +2,11 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.0
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/indigo-dc/oidc-agent:
       branch: prerel
-      repo: https://github.com/indigo-dc/oidc-agent
+      repo: https://github.com/indigo-dc/oidc-agent/
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -15,28 +15,48 @@ sqa_criteria:
     repos:
       github.com/indigo-dc/oidc-agent git:
         commands:
-        - /usr/bin/env sh .sqa/script.chummy-peach-donkey.sh
-        container: qc.acc_shaky-corn-uakari
+        - /usr/bin/env sh .sqa/script.wimpy-jade-salamander.sh
+        container: qc.acc_leaky-celadon-coral
   QC.Doc:
     repos:
       github.com/indigo-dc/oidc-agent find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-viridian-collie.sh
-        container: qc.doc_randy-silver-panda
+        - /usr/bin/env sh .sqa/script.flaky-sapphire-chameleon.sh
+        container: qc.doc_sleepy-white-salamander
       github.com/indigo-dc/oidc-agent git:
         commands:
-        - /usr/bin/env sh .sqa/script.woolly-chestnut-markhor.sh
-        container: qc.doc_scanty-scarlet-dog
+        - /usr/bin/env sh .sqa/script.pretty-rose-millipede.sh
+        container: qc.doc_whiny-tomato-bison
+      github.com/indigo-dc/oidc-agent markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-zucchini-avocet.sh
+        container: qc.doc_whiny-tomato-booby
   QC.Lic:
     repos:
       github.com/indigo-dc/oidc-agent licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-auburn-quoll.sh
-        container: qc.lic_pasty-bistre-wrasse
+        - /usr/bin/env sh .sqa/script.gloppy-ruby-akita.sh
+        container: qc.lic_slimy-champagne-sheepdog
+  QC.Met:
+    repos:
+      github.com/indigo-dc/oidc-agent cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.pasty-dandelion-ferret.sh
+        container: qc.met_sunny-purple-serval
+  QC.Sty:
+    repos:
+      github.com/indigo-dc/oidc-agent jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-firebrick-frog.sh
+        container: qc.sty_cranky-mustard-snake
+      github.com/indigo-dc/oidc-agent oclint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flaky-taupe-quokka.sh
+        container: qc.sty_flimsy-firebrick-maltese
   QC.Ver:
     repos:
       github.com/indigo-dc/oidc-agent get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-tangerine-giraffe.sh
-        container: qc.ver_cranky-corn-foxhound
+        - /usr/bin/env sh .sqa/script.clammy-persimmon-spitz.sh
+        container: qc.ver_shaggy-tomato-magpie
 timeout: 5400

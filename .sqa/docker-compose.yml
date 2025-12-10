@@ -1,5 +1,5 @@
 services:
-  qc.acc_shaky-corn-uakari:
+  qc.acc_leaky-celadon-coral:
     command: sleep 6000000
     image: bitnami/git:2.34.1
     volumes:
@@ -7,7 +7,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.doc_randy-silver-panda:
+  qc.doc_sleepy-white-salamander:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc
       dockerfile: Dockerfile
@@ -17,7 +17,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.doc_scanty-scarlet-dog:
+  qc.doc_whiny-tomato-bison:
     command: sleep 6000000
     image: bitnami/git:2.34.1
     volumes:
@@ -25,9 +25,9 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.lic_pasty-bistre-wrasse:
+  qc.doc_whiny-tomato-booby:
     build:
-      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Lic/licensee
+      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc/markdownlint
       dockerfile: Dockerfile
     command: sleep 6000000
     volumes:
@@ -35,7 +35,43 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.ver_cranky-corn-foxhound:
+  qc.lic_slimy-champagne-sheepdog:
+    command: sleep 6000000
+    image: eoscsynergy/sqaaas-licensee:9.17.0
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.met_sunny-purple-serval:
+    build:
+      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Met/cff-converter-python
+      dockerfile: Dockerfile
+    command: sleep 6000000
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.sty_cranky-mustard-snake:
+    build:
+      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/jsonlint
+      dockerfile: Dockerfile
+    command: sleep 6000000
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.sty_flimsy-firebrick-maltese:
+    command: sleep 6000000
+    image: drakorgaur/oclint:3077181575
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.ver_shaggy-tomato-magpie:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Ver
       dockerfile: Dockerfile
